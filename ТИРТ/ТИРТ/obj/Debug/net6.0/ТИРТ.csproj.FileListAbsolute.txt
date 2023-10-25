@@ -1,0 +1,14 @@
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\bin\Debug\net6.0\ТИРТ.exe
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\bin\Debug\net6.0\ТИРТ.deps.json
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\bin\Debug\net6.0\ТИРТ.runtimeconfig.json
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\bin\Debug\net6.0\ТИРТ.dll
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\bin\Debug\net6.0\ТИРТ.pdb
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.AssemblyInfoInputs.cache
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.AssemblyInfo.cs
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.csproj.CoreCompileInputs.cache
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.dll
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\refint\ТИРТ.dll
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.pdb
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ТИРТ.genruntimeconfig.cache
+C:\Users\SystemX\source\repos\ТИРТ\ТИРТ\obj\Debug\net6.0\ref\ТИРТ.dll
