@@ -1,0 +1,19 @@
+﻿<Window x:Class="Ycheb_practika.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ycheb_practika"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid Margin="0,0,20,0">
+            <DataGrid x:Name ="StorageDataGrid" Margin="0,0,390,0"/>
+            <DataGrid x:Name ="StorageDrg" Margin="395,0,0,0"/>
+        </Grid>
+        <Grid Margin="5,0,0,0">
+            <ComboBox x:Name ="StorageComboBox" Margin="23,271,552,111"/>
+            <ComboBox x:Name ="StorageCbx" Margin="416,273,112,111"/>
+        </Grid>
+    </Grid>
+</Window>
