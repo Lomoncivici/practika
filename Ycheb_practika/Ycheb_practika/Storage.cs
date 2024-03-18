@@ -18,7 +18,6 @@ namespace Ycheb_practika
         public Nullable<int> Tip_ID { get; set; }
         public Nullable<int> brand_ID { get; set; }
         public Nullable<int> price { get; set; }
-        public Nullable<System.DateTime> Arrival_Date { get; set; }
         public Nullable<int> Config_ID { get; set; }
         public Nullable<int> Characteristics_ID { get; set; }
     

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище PRACT4Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brands">
+    <Key>
+      <PropertyRef Name="ID_Brand" />
+    </Key>
+    <Property Name="ID_Brand" Type="int" Nullable="false" />
+    <Property Name="Brand_Name" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Characteristics">
+    <Key>
+      <PropertyRef Name="ID_Characteristics" />
+    </Key>
+    <Property Name="ID_Characteristics" Type="int" Nullable="false" />
+    <Property Name="Dimensions" Type="varchar" MaxLength="20" />
+    <Property Name="Wheels" Type="int" />
+    <Property Name="Frame" Type="int" />
+    <Property Name="Gearbox" Type="int" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "PRACT4.dbo.Storage" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Storage">
+          <Property Name="brand_ID" Type="int" />
+          <Property Name="price" Type="int" />
+          <Property Name="Arrival_Date" Type="date" />
+          <Property Name="Characteristics_ID" Type="int" />
+        </EntityType>-->
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+ошибка 6004: Невозможно найти таблицу "PRACT4.dbo.Storage", на которую ссылается связь.
+        <Association Name="FK__Storage__brand_I__4E88ABD4" />-->
+  <!--Ошибки, обнаруженные при создании:
+ошибка 6004: Невозможно найти таблицу "PRACT4.dbo.Storage", на которую ссылается связь.
+        <Association Name="FK__Storage__Charact__4D94879B" />-->
+  <EntityContainer Name="Хранилище PRACT4ModelContainer">
+    <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Characteristics" EntityType="Self.Characteristics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

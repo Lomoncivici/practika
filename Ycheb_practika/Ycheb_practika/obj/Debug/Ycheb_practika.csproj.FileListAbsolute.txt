@@ -18,7 +18,9 @@ C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\bin\Debug\EntityFram
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\bin\Debug\EntityFramework.xml
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\bin\Debug\ru\EntityFramework.resources.dll
-C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Window1.g.cs
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Ycheb_practika_Content.g.cs
-C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Window1.baml
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Ycheb_practika.csproj.CopyComplete
+C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Бред бредовый.g.cs
+C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Бред бредовый.baml
+C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\1.g.cs
+C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\1.baml

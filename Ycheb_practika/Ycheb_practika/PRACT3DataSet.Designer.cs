@@ -34,13 +34,13 @@ namespace Ycheb_practika {
         
         private TipDataTable tableTip;
         
-        private global::System.Data.DataRelation relationFK__Storage__brand_I__7C4F7684;
+        private global::System.Data.DataRelation relationFK__Storage__brand_I__2B0A656D;
         
-        private global::System.Data.DataRelation relationFK__Storage__Charact__7A672E12;
+        private global::System.Data.DataRelation relationFK__Storage__Charact__29221CFB;
         
-        private global::System.Data.DataRelation relationFK__Storage__Config___7D439ABD;
+        private global::System.Data.DataRelation relationFK__Storage__Config___2BFE89A6;
         
-        private global::System.Data.DataRelation relationFK__Storage__Tip_ID__7B5B524B;
+        private global::System.Data.DataRelation relationFK__Storage__Tip_ID__2A164134;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -298,10 +298,10 @@ namespace Ycheb_practika {
                     this.tableTip.InitVars();
                 }
             }
-            this.relationFK__Storage__brand_I__7C4F7684 = this.Relations["FK__Storage__brand_I__7C4F7684"];
-            this.relationFK__Storage__Charact__7A672E12 = this.Relations["FK__Storage__Charact__7A672E12"];
-            this.relationFK__Storage__Config___7D439ABD = this.Relations["FK__Storage__Config___7D439ABD"];
-            this.relationFK__Storage__Tip_ID__7B5B524B = this.Relations["FK__Storage__Tip_ID__7B5B524B"];
+            this.relationFK__Storage__brand_I__2B0A656D = this.Relations["FK__Storage__brand_I__2B0A656D"];
+            this.relationFK__Storage__Charact__29221CFB = this.Relations["FK__Storage__Charact__29221CFB"];
+            this.relationFK__Storage__Config___2BFE89A6 = this.Relations["FK__Storage__Config___2BFE89A6"];
+            this.relationFK__Storage__Tip_ID__2A164134 = this.Relations["FK__Storage__Tip_ID__2A164134"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -322,22 +322,22 @@ namespace Ycheb_practika {
             base.Tables.Add(this.tableStorage);
             this.tableTip = new TipDataTable();
             base.Tables.Add(this.tableTip);
-            this.relationFK__Storage__brand_I__7C4F7684 = new global::System.Data.DataRelation("FK__Storage__brand_I__7C4F7684", new global::System.Data.DataColumn[] {
+            this.relationFK__Storage__brand_I__2B0A656D = new global::System.Data.DataRelation("FK__Storage__brand_I__2B0A656D", new global::System.Data.DataColumn[] {
                         this.tableBrands.ID_BrandColumn}, new global::System.Data.DataColumn[] {
                         this.tableStorage.brand_IDColumn}, false);
-            this.Relations.Add(this.relationFK__Storage__brand_I__7C4F7684);
-            this.relationFK__Storage__Charact__7A672E12 = new global::System.Data.DataRelation("FK__Storage__Charact__7A672E12", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Storage__brand_I__2B0A656D);
+            this.relationFK__Storage__Charact__29221CFB = new global::System.Data.DataRelation("FK__Storage__Charact__29221CFB", new global::System.Data.DataColumn[] {
                         this.tableCharacteristics.ID_CharacteristicsColumn}, new global::System.Data.DataColumn[] {
                         this.tableStorage.Characteristics_IDColumn}, false);
-            this.Relations.Add(this.relationFK__Storage__Charact__7A672E12);
-            this.relationFK__Storage__Config___7D439ABD = new global::System.Data.DataRelation("FK__Storage__Config___7D439ABD", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Storage__Charact__29221CFB);
+            this.relationFK__Storage__Config___2BFE89A6 = new global::System.Data.DataRelation("FK__Storage__Config___2BFE89A6", new global::System.Data.DataColumn[] {
                         this.tableConfig.ID_ConfigColumn}, new global::System.Data.DataColumn[] {
                         this.tableStorage.Config_IDColumn}, false);
-            this.Relations.Add(this.relationFK__Storage__Config___7D439ABD);
-            this.relationFK__Storage__Tip_ID__7B5B524B = new global::System.Data.DataRelation("FK__Storage__Tip_ID__7B5B524B", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__Storage__Config___2BFE89A6);
+            this.relationFK__Storage__Tip_ID__2A164134 = new global::System.Data.DataRelation("FK__Storage__Tip_ID__2A164134", new global::System.Data.DataColumn[] {
                         this.tableTip.ID_TipColumn}, new global::System.Data.DataColumn[] {
                         this.tableStorage.Tip_IDColumn}, false);
-            this.Relations.Add(this.relationFK__Storage__Tip_ID__7B5B524B);
+            this.Relations.Add(this.relationFK__Storage__Tip_ID__2A164134);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1316,8 +1316,6 @@ namespace Ycheb_practika {
             
             private global::System.Data.DataColumn columnprice;
             
-            private global::System.Data.DataColumn columnArrival_Date;
-            
             private global::System.Data.DataColumn columnConfig_ID;
             
             private global::System.Data.DataColumn columnCharacteristics_ID;
@@ -1389,14 +1387,6 @@ namespace Ycheb_practika {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn Arrival_DateColumn {
-                get {
-                    return this.columnArrival_Date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn Config_IDColumn {
                 get {
                     return this.columnConfig_ID;
@@ -1448,27 +1438,26 @@ namespace Ycheb_practika {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public StorageRow AddStorageRow(int ID, TipRow parentTipRowByFK__Storage__Tip_ID__7B5B524B, BrandsRow parentBrandsRowByFK__Storage__brand_I__7C4F7684, int price, System.DateTime Arrival_Date, ConfigRow parentConfigRowByFK__Storage__Config___7D439ABD, CharacteristicsRow parentCharacteristicsRowByFK__Storage__Charact__7A672E12) {
+            public StorageRow AddStorageRow(int ID, TipRow parentTipRowByFK__Storage__Tip_ID__2A164134, BrandsRow parentBrandsRowByFK__Storage__brand_I__2B0A656D, int price, ConfigRow parentConfigRowByFK__Storage__Config___2BFE89A6, CharacteristicsRow parentCharacteristicsRowByFK__Storage__Charact__29221CFB) {
                 StorageRow rowStorageRow = ((StorageRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         ID,
                         null,
                         null,
                         price,
-                        Arrival_Date,
                         null,
                         null};
-                if ((parentTipRowByFK__Storage__Tip_ID__7B5B524B != null)) {
-                    columnValuesArray[1] = parentTipRowByFK__Storage__Tip_ID__7B5B524B[0];
+                if ((parentTipRowByFK__Storage__Tip_ID__2A164134 != null)) {
+                    columnValuesArray[1] = parentTipRowByFK__Storage__Tip_ID__2A164134[0];
                 }
-                if ((parentBrandsRowByFK__Storage__brand_I__7C4F7684 != null)) {
-                    columnValuesArray[2] = parentBrandsRowByFK__Storage__brand_I__7C4F7684[0];
+                if ((parentBrandsRowByFK__Storage__brand_I__2B0A656D != null)) {
+                    columnValuesArray[2] = parentBrandsRowByFK__Storage__brand_I__2B0A656D[0];
                 }
-                if ((parentConfigRowByFK__Storage__Config___7D439ABD != null)) {
-                    columnValuesArray[5] = parentConfigRowByFK__Storage__Config___7D439ABD[0];
+                if ((parentConfigRowByFK__Storage__Config___2BFE89A6 != null)) {
+                    columnValuesArray[4] = parentConfigRowByFK__Storage__Config___2BFE89A6[0];
                 }
-                if ((parentCharacteristicsRowByFK__Storage__Charact__7A672E12 != null)) {
-                    columnValuesArray[6] = parentCharacteristicsRowByFK__Storage__Charact__7A672E12[0];
+                if ((parentCharacteristicsRowByFK__Storage__Charact__29221CFB != null)) {
+                    columnValuesArray[5] = parentCharacteristicsRowByFK__Storage__Charact__29221CFB[0];
                 }
                 rowStorageRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowStorageRow);
@@ -1503,7 +1492,6 @@ namespace Ycheb_practika {
                 this.columnTip_ID = base.Columns["Tip_ID"];
                 this.columnbrand_ID = base.Columns["brand_ID"];
                 this.columnprice = base.Columns["price"];
-                this.columnArrival_Date = base.Columns["Arrival_Date"];
                 this.columnConfig_ID = base.Columns["Config_ID"];
                 this.columnCharacteristics_ID = base.Columns["Characteristics_ID"];
             }
@@ -1519,8 +1507,6 @@ namespace Ycheb_practika {
                 base.Columns.Add(this.columnbrand_ID);
                 this.columnprice = new global::System.Data.DataColumn("price", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprice);
-                this.columnArrival_Date = new global::System.Data.DataColumn("Arrival_Date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnArrival_Date);
                 this.columnConfig_ID = new global::System.Data.DataColumn("Config_ID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnConfig_ID);
                 this.columnCharacteristics_ID = new global::System.Data.DataColumn("Characteristics_ID", typeof(int), null, global::System.Data.MappingType.Element);
@@ -1984,11 +1970,11 @@ namespace Ycheb_practika {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StorageRow[] GetStorageRows() {
-                if ((this.Table.ChildRelations["FK__Storage__brand_I__7C4F7684"] == null)) {
+                if ((this.Table.ChildRelations["FK__Storage__brand_I__2B0A656D"] == null)) {
                     return new StorageRow[0];
                 }
                 else {
-                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__brand_I__7C4F7684"])));
+                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__brand_I__2B0A656D"])));
                 }
             }
         }
@@ -2133,11 +2119,11 @@ namespace Ycheb_practika {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StorageRow[] GetStorageRows() {
-                if ((this.Table.ChildRelations["FK__Storage__Charact__7A672E12"] == null)) {
+                if ((this.Table.ChildRelations["FK__Storage__Charact__29221CFB"] == null)) {
                     return new StorageRow[0];
                 }
                 else {
-                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__Charact__7A672E12"])));
+                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__Charact__29221CFB"])));
                 }
             }
         }
@@ -2198,11 +2184,11 @@ namespace Ycheb_practika {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StorageRow[] GetStorageRows() {
-                if ((this.Table.ChildRelations["FK__Storage__Config___7D439ABD"] == null)) {
+                if ((this.Table.ChildRelations["FK__Storage__Config___2BFE89A6"] == null)) {
                     return new StorageRow[0];
                 }
                 else {
-                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__Config___7D439ABD"])));
+                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__Config___2BFE89A6"])));
                 }
             }
         }
@@ -2282,22 +2268,6 @@ namespace Ycheb_practika {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime Arrival_Date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableStorage.Arrival_DateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Arrival_Date\' в таблице \'Storage\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableStorage.Arrival_DateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int Config_ID {
                 get {
                     try {
@@ -2332,10 +2302,10 @@ namespace Ycheb_practika {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public BrandsRow BrandsRow {
                 get {
-                    return ((BrandsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__brand_I__7C4F7684"])));
+                    return ((BrandsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__brand_I__2B0A656D"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__brand_I__7C4F7684"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__brand_I__2B0A656D"]);
                 }
             }
             
@@ -2343,10 +2313,10 @@ namespace Ycheb_practika {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public CharacteristicsRow CharacteristicsRow {
                 get {
-                    return ((CharacteristicsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__Charact__7A672E12"])));
+                    return ((CharacteristicsRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__Charact__29221CFB"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__Charact__7A672E12"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__Charact__29221CFB"]);
                 }
             }
             
@@ -2354,10 +2324,10 @@ namespace Ycheb_practika {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ConfigRow ConfigRow {
                 get {
-                    return ((ConfigRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__Config___7D439ABD"])));
+                    return ((ConfigRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__Config___2BFE89A6"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__Config___7D439ABD"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__Config___2BFE89A6"]);
                 }
             }
             
@@ -2365,10 +2335,10 @@ namespace Ycheb_practika {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public TipRow TipRow {
                 get {
-                    return ((TipRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__Tip_ID__7B5B524B"])));
+                    return ((TipRow)(this.GetParentRow(this.Table.ParentRelations["FK__Storage__Tip_ID__2A164134"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__Tip_ID__7B5B524B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__Storage__Tip_ID__2A164134"]);
                 }
             }
             
@@ -2406,18 +2376,6 @@ namespace Ycheb_practika {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetpriceNull() {
                 this[this.tableStorage.priceColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsArrival_DateNull() {
-                return this.IsNull(this.tableStorage.Arrival_DateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetArrival_DateNull() {
-                this[this.tableStorage.Arrival_DateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2501,11 +2459,11 @@ namespace Ycheb_practika {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public StorageRow[] GetStorageRows() {
-                if ((this.Table.ChildRelations["FK__Storage__Tip_ID__7B5B524B"] == null)) {
+                if ((this.Table.ChildRelations["FK__Storage__Tip_ID__2A164134"] == null)) {
                     return new StorageRow[0];
                 }
                 else {
-                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__Tip_ID__7B5B524B"])));
+                    return ((StorageRow[])(base.GetChildRows(this.Table.ChildRelations["FK__Storage__Tip_ID__2A164134"])));
                 }
             }
         }
@@ -3892,13 +3850,12 @@ SELECT ID_Config, Config_Name FROM Config WHERE (ID_Config = @ID_Config)";
             tableMapping.ColumnMappings.Add("Tip_ID", "Tip_ID");
             tableMapping.ColumnMappings.Add("brand_ID", "brand_ID");
             tableMapping.ColumnMappings.Add("price", "price");
-            tableMapping.ColumnMappings.Add("Arrival_Date", "Arrival_Date");
             tableMapping.ColumnMappings.Add("Config_ID", "Config_ID");
             tableMapping.ColumnMappings.Add("Characteristics_ID", "Characteristics_ID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Storage] WHERE (([ID] = @Original_ID) AND ((@IsNull_Tip_ID = 1 AND [Tip_ID] IS NULL) OR ([Tip_ID] = @Original_Tip_ID)) AND ((@IsNull_brand_ID = 1 AND [brand_ID] IS NULL) OR ([brand_ID] = @Original_brand_ID)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_Arrival_Date = 1 AND [Arrival_Date] IS NULL) OR ([Arrival_Date] = @Original_Arrival_Date)) AND ((@IsNull_Config_ID = 1 AND [Config_ID] IS NULL) OR ([Config_ID] = @Original_Config_ID)) AND ((@IsNull_Characteristics_ID = 1 AND [Characteristics_ID] IS NULL) OR ([Characteristics_ID] = @Original_Characteristics_ID)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Storage] WHERE (([ID] = @Original_ID) AND ((@IsNull_Tip_ID = 1 AND [Tip_ID] IS NULL) OR ([Tip_ID] = @Original_Tip_ID)) AND ((@IsNull_brand_ID = 1 AND [brand_ID] IS NULL) OR ([brand_ID] = @Original_brand_ID)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_Config_ID = 1 AND [Config_ID] IS NULL) OR ([Config_ID] = @Original_Config_ID)) AND ((@IsNull_Characteristics_ID = 1 AND [Characteristics_ID] IS NULL) OR ([Characteristics_ID] = @Original_Characteristics_ID)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Tip_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tip_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3907,34 +3864,30 @@ SELECT ID_Config, Config_Name FROM Config WHERE (ID_Config = @ID_Config)";
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Arrival_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arrival_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Arrival_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arrival_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Config_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Config_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Config_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Config_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Characteristics_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Characteristics_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Characteristics_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Characteristics_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Storage] ([ID], [Tip_ID], [brand_ID], [price], [Arrival_Date], [Config_ID], [Characteristics_ID]) VALUES (@ID, @Tip_ID, @brand_ID, @price, @Arrival_Date, @Config_ID, @Characteristics_ID);
-SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID FROM Storage WHERE (ID = @ID)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Storage] ([ID], [Tip_ID], [brand_ID], [price], [Config_ID], [Characteristics_ID]) VALUES (@ID, @Tip_ID, @brand_ID, @price, @Config_ID, @Characteristics_ID);
+SELECT ID, Tip_ID, brand_ID, price, Config_ID, Characteristics_ID FROM Storage WHERE (ID = @ID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tip_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tip_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arrival_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arrival_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Config_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Config_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Characteristics_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Characteristics_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Storage] SET [ID] = @ID, [Tip_ID] = @Tip_ID, [brand_ID] = @brand_ID, [price] = @price, [Arrival_Date] = @Arrival_Date, [Config_ID] = @Config_ID, [Characteristics_ID] = @Characteristics_ID WHERE (([ID] = @Original_ID) AND ((@IsNull_Tip_ID = 1 AND [Tip_ID] IS NULL) OR ([Tip_ID] = @Original_Tip_ID)) AND ((@IsNull_brand_ID = 1 AND [brand_ID] IS NULL) OR ([brand_ID] = @Original_brand_ID)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_Arrival_Date = 1 AND [Arrival_Date] IS NULL) OR ([Arrival_Date] = @Original_Arrival_Date)) AND ((@IsNull_Config_ID = 1 AND [Config_ID] IS NULL) OR ([Config_ID] = @Original_Config_ID)) AND ((@IsNull_Characteristics_ID = 1 AND [Characteristics_ID] IS NULL) OR ([Characteristics_ID] = @Original_Characteristics_ID)));
-SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID FROM Storage WHERE (ID = @ID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Storage] SET [ID] = @ID, [Tip_ID] = @Tip_ID, [brand_ID] = @brand_ID, [price] = @price, [Config_ID] = @Config_ID, [Characteristics_ID] = @Characteristics_ID WHERE (([ID] = @Original_ID) AND ((@IsNull_Tip_ID = 1 AND [Tip_ID] IS NULL) OR ([Tip_ID] = @Original_Tip_ID)) AND ((@IsNull_brand_ID = 1 AND [brand_ID] IS NULL) OR ([brand_ID] = @Original_brand_ID)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_Config_ID = 1 AND [Config_ID] IS NULL) OR ([Config_ID] = @Original_Config_ID)) AND ((@IsNull_Characteristics_ID = 1 AND [Characteristics_ID] IS NULL) OR ([Characteristics_ID] = @Original_Characteristics_ID)));
+SELECT ID, Tip_ID, brand_ID, price, Config_ID, Characteristics_ID FROM Storage WHERE (ID = @ID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Tip_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Tip_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Arrival_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arrival_Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Config_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Config_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Characteristics_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Characteristics_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -3944,8 +3897,6 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_price", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "price", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Arrival_Date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arrival_Date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Arrival_Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Arrival_Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Config_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Config_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Config_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Config_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_Characteristics_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Characteristics_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3962,12 +3913,34 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID F" +
-                "ROM dbo.Storage";
+            this._commandCollection[0].CommandText = "SELECT ID, Tip_ID, brand_ID, price, Config_ID, Characteristics_ID FROM dbo.Storag" +
+                "e";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "DELETE FROM Storage\r\nWHERE        (@IsNull_brand_ID = 1 AND brand_ID IS NULL OR\r\n" +
+                "                         brand_ID = @Original_brand_ID)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brand_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "INSERT INTO Storage\r\n                         (brand_ID)\r\nVALUES        (@brand_I" +
+                "D)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brand_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "UPDATE       Storage\r\nSET                brand_ID = @brand_ID\r\nWHERE        (@IsN" +
+                "ull_brand_ID = 1) AND (brand_ID IS NULL) OR\r\n                         (brand_ID " +
+                "= @Original_brand_ID)";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@brand_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_brand_ID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_brand_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "brand_ID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4027,7 +4000,7 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_ID, global::System.Nullable<int> Original_Tip_ID, global::System.Nullable<int> Original_brand_ID, global::System.Nullable<int> Original_price, global::System.Nullable<global::System.DateTime> Original_Arrival_Date, global::System.Nullable<int> Original_Config_ID, global::System.Nullable<int> Original_Characteristics_ID) {
+        public virtual int Delete(int Original_ID, global::System.Nullable<int> Original_Tip_ID, global::System.Nullable<int> Original_brand_ID, global::System.Nullable<int> Original_price, global::System.Nullable<int> Original_Config_ID, global::System.Nullable<int> Original_Characteristics_ID) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_ID));
             if ((Original_Tip_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -4053,29 +4026,21 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_Arrival_Date.HasValue == true)) {
+            if ((Original_Config_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_Arrival_Date.Value));
+                this.Adapter.DeleteCommand.Parameters[8].Value = ((int)(Original_Config_ID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
-            if ((Original_Config_ID.HasValue == true)) {
+            if ((Original_Characteristics_ID.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Config_ID.Value));
+                this.Adapter.DeleteCommand.Parameters[10].Value = ((int)(Original_Characteristics_ID.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[10].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Characteristics_ID.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[12].Value = ((int)(Original_Characteristics_ID.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[11].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4097,7 +4062,7 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int ID, global::System.Nullable<int> Tip_ID, global::System.Nullable<int> brand_ID, global::System.Nullable<int> price, global::System.Nullable<global::System.DateTime> Arrival_Date, global::System.Nullable<int> Config_ID, global::System.Nullable<int> Characteristics_ID) {
+        public virtual int Insert(int ID, global::System.Nullable<int> Tip_ID, global::System.Nullable<int> brand_ID, global::System.Nullable<int> price, global::System.Nullable<int> Config_ID, global::System.Nullable<int> Characteristics_ID) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(ID));
             if ((Tip_ID.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(Tip_ID.Value));
@@ -4117,23 +4082,17 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
             else {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Arrival_Date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(Arrival_Date.Value));
+            if ((Config_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((int)(Config_ID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Config_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Config_ID.Value));
+            if ((Characteristics_ID.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[5].Value = ((int)(Characteristics_ID.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            if ((Characteristics_ID.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[6].Value = ((int)(Characteristics_ID.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4155,7 +4114,7 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int ID, global::System.Nullable<int> Tip_ID, global::System.Nullable<int> brand_ID, global::System.Nullable<int> price, global::System.Nullable<global::System.DateTime> Arrival_Date, global::System.Nullable<int> Config_ID, global::System.Nullable<int> Characteristics_ID, int Original_ID, global::System.Nullable<int> Original_Tip_ID, global::System.Nullable<int> Original_brand_ID, global::System.Nullable<int> Original_price, global::System.Nullable<global::System.DateTime> Original_Arrival_Date, global::System.Nullable<int> Original_Config_ID, global::System.Nullable<int> Original_Characteristics_ID) {
+        public virtual int Update(int ID, global::System.Nullable<int> Tip_ID, global::System.Nullable<int> brand_ID, global::System.Nullable<int> price, global::System.Nullable<int> Config_ID, global::System.Nullable<int> Characteristics_ID, int Original_ID, global::System.Nullable<int> Original_Tip_ID, global::System.Nullable<int> Original_brand_ID, global::System.Nullable<int> Original_price, global::System.Nullable<int> Original_Config_ID, global::System.Nullable<int> Original_Characteristics_ID) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(ID));
             if ((Tip_ID.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(Tip_ID.Value));
@@ -4175,72 +4134,58 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
             else {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
             }
-            if ((Arrival_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(Arrival_Date.Value));
+            if ((Config_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Config_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            if ((Config_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Config_ID.Value));
+            if ((Characteristics_ID.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Characteristics_ID.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
-            if ((Characteristics_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Characteristics_ID.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_ID));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_ID));
             if ((Original_Tip_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_Tip_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_Tip_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             if ((Original_brand_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Original_brand_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_brand_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
             if ((Original_price.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((int)(Original_price.Value));
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_price.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
-            if ((Original_Arrival_Date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((System.DateTime)(Original_Arrival_Date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
             }
             if ((Original_Config_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_Config_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_Config_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
             if ((Original_Characteristics_ID.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((int)(Original_Characteristics_ID.Value));
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_Characteristics_ID.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -4262,8 +4207,113 @@ SELECT ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> Tip_ID, global::System.Nullable<int> brand_ID, global::System.Nullable<int> price, global::System.Nullable<global::System.DateTime> Arrival_Date, global::System.Nullable<int> Config_ID, global::System.Nullable<int> Characteristics_ID, int Original_ID, global::System.Nullable<int> Original_Tip_ID, global::System.Nullable<int> Original_brand_ID, global::System.Nullable<int> Original_price, global::System.Nullable<global::System.DateTime> Original_Arrival_Date, global::System.Nullable<int> Original_Config_ID, global::System.Nullable<int> Original_Characteristics_ID) {
-            return this.Update(Original_ID, Tip_ID, brand_ID, price, Arrival_Date, Config_ID, Characteristics_ID, Original_ID, Original_Tip_ID, Original_brand_ID, Original_price, Original_Arrival_Date, Original_Config_ID, Original_Characteristics_ID);
+        public virtual int Update(global::System.Nullable<int> Tip_ID, global::System.Nullable<int> brand_ID, global::System.Nullable<int> price, global::System.Nullable<int> Config_ID, global::System.Nullable<int> Characteristics_ID, int Original_ID, global::System.Nullable<int> Original_Tip_ID, global::System.Nullable<int> Original_brand_ID, global::System.Nullable<int> Original_price, global::System.Nullable<int> Original_Config_ID, global::System.Nullable<int> Original_Characteristics_ID) {
+            return this.Update(Original_ID, Tip_ID, brand_ID, price, Config_ID, Characteristics_ID, Original_ID, Original_Tip_ID, Original_brand_ID, Original_price, Original_Config_ID, Original_Characteristics_ID);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteQuery(global::System.Nullable<int> IsNull_brand_ID, global::System.Nullable<int> Original_brand_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((IsNull_brand_ID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(IsNull_brand_ID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Original_brand_ID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(Original_brand_ID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
+        public virtual int InsertQuery(global::System.Nullable<int> brand_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
+            if ((brand_ID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(brand_ID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateQuery(global::System.Nullable<int> brand_ID, global::System.Nullable<int> IsNull_brand_ID, global::System.Nullable<int> Original_brand_ID) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[3];
+            if ((brand_ID.HasValue == true)) {
+                command.Parameters[0].Value = ((int)(brand_ID.Value));
+            }
+            else {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((IsNull_brand_ID.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(IsNull_brand_ID.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((Original_brand_ID.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(Original_brand_ID.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

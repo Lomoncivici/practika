@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище PRACT3Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Brands">
+    <Key>
+      <PropertyRef Name="ID_Brand" />
+    </Key>
+    <Property Name="ID_Brand" Type="int" Nullable="false" />
+    <Property Name="Brand_Name" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <EntityType Name="Characteristics">
+    <Key>
+      <PropertyRef Name="ID_Characteristics" />
+    </Key>
+    <Property Name="ID_Characteristics" Type="int" Nullable="false" />
+    <Property Name="Dimensions" Type="varchar" MaxLength="20" />
+    <Property Name="Wheels" Type="int" />
+    <Property Name="Frame" Type="int" />
+    <Property Name="Gearbox" Type="int" />
+  </EntityType>
+  <EntityType Name="Config">
+    <Key>
+      <PropertyRef Name="ID_Config" />
+    </Key>
+    <Property Name="ID_Config" Type="int" Nullable="false" />
+    <Property Name="Config_Name" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="Storage">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Tip_ID" Type="int" />
+    <Property Name="brand_ID" Type="int" />
+    <Property Name="price" Type="int" />
+    <Property Name="Arrival_Date" Type="date" />
+    <Property Name="Config_ID" Type="int" />
+    <Property Name="Characteristics_ID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Tip">
+    <Key>
+      <PropertyRef Name="ID_Tip" />
+    </Key>
+    <Property Name="ID_Tip" Type="int" Nullable="false" />
+    <Property Name="Tip_Name" Type="varchar" MaxLength="32" />
+  </EntityType>
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "PRACT3.dbo.Characteristics_View" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Characteristics_View">
+          <Property Name="Размеры" Type="varchar" MaxLength="20" />
+          <Property Name="Количество колес" Type="int" />
+          <Property Name="Рама" Type="int" />
+          <Property Name="Коробка передач" Type="int" />
+        </EntityType>-->
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "PRACT3.dbo.Product_Info_View" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Product_Info_View">
+          <Property Name="Бренд" Type="varchar" MaxLength="32" />
+          <Property Name="Цена" Type="int" />
+          <Property Name="Дата прибытия" Type="date" />
+        </EntityType>-->
+  <!--Ошибки, обнаруженные при создании:
+предупреждение 6013: Первичный ключ в таблице или представлении "PRACT3.dbo.Storage_View" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+        <EntityType Name="Storage_View">
+          <Property Name="Бренд" Type="varchar" MaxLength="32" />
+          <Property Name="Тип" Type="varchar" MaxLength="32" />
+          <Property Name="Конфигурация" Type="varchar" MaxLength="20" />
+          <Property Name="Цена" Type="int" />
+          <Property Name="Дата прибытия" Type="date" />
+          <Property Name="Размеры" Type="varchar" MaxLength="20" />
+          <Property Name="Количество колес" Type="int" />
+          <Property Name="Рама" Type="int" />
+          <Property Name="Коробка передач" Type="int" />
+        </EntityType>-->
+  <Association Name="FK__Storage__brand_I__7C4F7684">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="ID_Brand" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="brand_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Storage__Charact__7A672E12">
+    <End Role="Characteristics" Type="Self.Characteristics" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Characteristics">
+        <PropertyRef Name="ID_Characteristics" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="Characteristics_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Storage__Config___7D439ABD">
+    <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Config">
+        <PropertyRef Name="ID_Config" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="Config_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Storage__Tip_ID__7B5B524B">
+    <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tip">
+        <PropertyRef Name="ID_Tip" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="Tip_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище PRACT3ModelContainer">
+    <EntitySet Name="Brands" EntityType="Self.Brands" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Characteristics" EntityType="Self.Characteristics" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Config" EntityType="Self.Config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tip" EntityType="Self.Tip" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Storage__brand_I__7C4F7684" Association="Self.FK__Storage__brand_I__7C4F7684">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Storage__Charact__7A672E12" Association="Self.FK__Storage__Charact__7A672E12">
+      <End Role="Characteristics" EntitySet="Characteristics" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Storage__Config___7D439ABD" Association="Self.FK__Storage__Config___7D439ABD">
+      <End Role="Config" EntitySet="Config" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Storage__Tip_ID__7B5B524B" Association="Self.FK__Storage__Tip_ID__7B5B524B">
+      <End Role="Tip" EntitySet="Tip" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

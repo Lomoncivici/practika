@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище PRACT3ModelContainer" CdmEntityContainer="PRACT3Entities1">
+    <EntitySetMapping Name="Brands">
+      <EntityTypeMapping TypeName="PRACT3Model.Brands">
+        <MappingFragment StoreEntitySet="Brands">
+          <ScalarProperty Name="ID_Brand" ColumnName="ID_Brand" />
+          <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Characteristics">
+      <EntityTypeMapping TypeName="PRACT3Model.Characteristics">
+        <MappingFragment StoreEntitySet="Characteristics">
+          <ScalarProperty Name="ID_Characteristics" ColumnName="ID_Characteristics" />
+          <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+          <ScalarProperty Name="Wheels" ColumnName="Wheels" />
+          <ScalarProperty Name="Frame" ColumnName="Frame" />
+          <ScalarProperty Name="Gearbox" ColumnName="Gearbox" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Config">
+      <EntityTypeMapping TypeName="PRACT3Model.Config">
+        <MappingFragment StoreEntitySet="Config">
+          <ScalarProperty Name="ID_Config" ColumnName="ID_Config" />
+          <ScalarProperty Name="Config_Name" ColumnName="Config_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Storage">
+      <EntityTypeMapping TypeName="PRACT3Model.Storage">
+        <MappingFragment StoreEntitySet="Storage">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Tip_ID" ColumnName="Tip_ID" />
+          <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+          <ScalarProperty Name="price" ColumnName="price" />
+          <ScalarProperty Name="Config_ID" ColumnName="Config_ID" />
+          <ScalarProperty Name="Characteristics_ID" ColumnName="Characteristics_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="PRACT3Model.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tip">
+      <EntityTypeMapping TypeName="PRACT3Model.Tip">
+        <MappingFragment StoreEntitySet="Tip">
+          <ScalarProperty Name="ID_Tip" ColumnName="ID_Tip" />
+          <ScalarProperty Name="Tip_Name" ColumnName="Tip_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

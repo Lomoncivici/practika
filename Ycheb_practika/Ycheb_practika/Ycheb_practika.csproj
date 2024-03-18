@@ -64,42 +64,54 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="1.xaml.cs">
+      <DependentUpon>1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Brands.cs">
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
     <Compile Include="Characteristics.cs">
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
     <Compile Include="Config.cs">
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
-    <Compile Include="sstorage.Context.cs">
+    <Compile Include="PRACT3.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sstorage.Context.tt</DependentUpon>
+      <DependentUpon>PRACT3.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="sstorage.cs">
+    <Compile Include="PRACT3.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
-    <Compile Include="sstorage.Designer.cs">
+    <Compile Include="PRACT3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>sstorage.edmx</DependentUpon>
+      <DependentUpon>PRACT3.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="PRACT3DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRACT3DataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Storage.cs">
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
     <Compile Include="Tip.cs">
-      <DependentUpon>sstorage.tt</DependentUpon>
+      <DependentUpon>PRACT3.tt</DependentUpon>
     </Compile>
-    <Compile Include="Window1.xaml.cs">
-      <DependentUpon>Window1.xaml</DependentUpon>
+    <Compile Include="Бред бредовый.xaml.cs">
+      <DependentUpon>Бред бредовый.xaml</DependentUpon>
     </Compile>
+    <Page Include="1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -112,17 +124,12 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Window1.xaml">
+    <Page Include="Бред бредовый.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PRACT3DataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PRACT3DataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -141,6 +148,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <EntityDeploy Include="PRACT3.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PRACT3.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PRACT3.edmx.diagram">
+      <DependentUpon>PRACT3.edmx</DependentUpon>
+    </None>
     <None Include="PRACT3DataSet.xsc">
       <DependentUpon>PRACT3DataSet.xsd</DependentUpon>
     </None>
@@ -156,31 +170,24 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <EntityDeploy Include="sstorage.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>sstorage.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="sstorage.edmx.diagram">
-      <DependentUpon>sstorage.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="sstorage.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>sstorage.Context.cs</LastGenOutput>
-      <DependentUpon>sstorage.edmx</DependentUpon>
-    </Content>
-    <Content Include="sstorage.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>sstorage.edmx</DependentUpon>
-      <LastGenOutput>sstorage.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="PRACT3.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PRACT3.edmx</DependentUpon>
+      <LastGenOutput>PRACT3.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PRACT3.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PRACT3.edmx</DependentUpon>
+      <LastGenOutput>PRACT3.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

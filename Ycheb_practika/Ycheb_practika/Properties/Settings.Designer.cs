@@ -33,5 +33,16 @@ namespace Ycheb_practika.Properties {
                 return ((string)(this["PRACT3ConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-TDELVT9\\SQLEXPRESS;Initial Catalog=PRACT4;Integrated Security" +
+            "=True;TrustServerCertificate=True")]
+        public string PRACT4ConnectionString {
+            get {
+                return ((string)(this["PRACT4ConnectionString"]));
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sstorage.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("sstorage.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pract3.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pract3.tt")]
 
 
