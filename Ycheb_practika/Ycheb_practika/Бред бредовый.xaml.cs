@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -16,26 +19,21 @@ using Ycheb_practika.PRACT3DataSetTableAdapters;
 
 namespace Ycheb_practika
 {
-    /// <summary>
-    /// Логика взаимодействия для Бред_бредовый.xaml
-    /// </summary>
     public partial class Бред_бредовый : Window
     {
         StorageTableAdapter storage = new StorageTableAdapter();
-        PRACT3Entities1 sstorage = new PRACT3Entities1();
+        PRACT3Entities2 sstorage = new PRACT3Entities2();
+
 
         private bool passedValue;
         public Бред_бредовый(bool passedValue)
         {
             InitializeComponent();
 
-            StorageDataGrid.ItemsSource = storage.GetData();
-            StorageComboBox.ItemsSource = storage.GetData();
-            StorageComboBox.DisplayMemberPath = "price";
+            StorageDataGrid.ItemsSource = storage.GettFullInfo();
 
-            StorageDrg.ItemsSource = sstorage.Storage.ToList();
-            StorageCbx.ItemsSource = sstorage.Storage.ToList();
-            StorageCbx.DisplayMemberPath = "price";
+            StorageDrg.ItemsSource = sstorage.Storage_View.ToList();
+
 
             this.passedValue = passedValue;
 
@@ -57,6 +55,16 @@ namespace Ycheb_practika
                     StorageCbx.Visibility = Visibility.Visible;
                     break;
             }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            StorageDataGrid.Columns[0].Visibility = Visibility.Collapsed;
+            StorageDataGrid.Columns[1].Visibility = Visibility.Collapsed;
+            StorageDataGrid.Columns[2].Visibility = Visibility.Collapsed;
+            StorageDataGrid.Columns[3].Visibility = Visibility.Collapsed;
+            StorageDataGrid.Columns[4].Visibility = Visibility.Collapsed;
+            StorageDataGrid.Columns[5].Visibility = Visibility.Collapsed;
         }
     }
 }

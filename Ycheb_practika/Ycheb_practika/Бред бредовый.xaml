@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ycheb_practika"
         mc:Ignorable="d"
-        Title="Бред_бредовый" Height="450" Width="800" FontSize="18" FontWeight="Bold"  FontFamily="Gabriola">
+        Loaded="Window_Loaded" 
+        Title="IF2" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="109*">
@@ -30,8 +31,25 @@
             </ColumnDefinition>
         </Grid.ColumnDefinitions>
         <DataGrid x:Name ="StorageDataGrid" Grid.ColumnSpan="4" Margin="10,10,10,10" Grid.RowSpan="4" Visibility="Visible"/>
-        <DataGrid x:Name ="StorageDrg" Grid.ColumnSpan="4" Margin="10,10,10,10" Grid.RowSpan="4" Visibility="Hidden"/>
+        <!--<DataGrid x:Name ="StorageDrg" Grid.ColumnSpan="4" Margin="10,10,10,10" Grid.RowSpan="4" Visibility="Hidden"/>-->
         <ComboBox x:Name ="StorageComboBox" Margin="10,10,21,10" Grid.Row="4" Grid.Column="0" Visibility="Visible"/>
         <ComboBox x:Name ="StorageCbx" Margin="10,10,21,10" Grid.Row="4" Grid.Column="0" Visibility="Hidden"/>
+
+        <TextBox x:Name="TextBox" HorizontalAlignment="Left" Height="30" Margin="136,72,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="264" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2" Grid.Row="3"/>
+        <Button Grid.Column="3" Content="Поиск" HorizontalAlignment="Left" Margin="0,72,0,0" Grid.Row="3" VerticalAlignment="Top" Grid.RowSpan="2" Height="30" Width="44"/>
+
+        <DataGrid x:Name="StorageDrg" AutoGenerateColumns="False" Grid.ColumnSpan="4" Margin="10,10,10,10" Grid.RowSpan="4" Visibility="Hidden">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Tip_Name}" Header="Тип"/>
+                <DataGridTextColumn Binding="{Binding Brand_Name}" Header="Бренд"/>
+                <DataGridTextColumn Binding="{Binding Config_Name}" Header="Конфигурация"/>
+                <DataGridTextColumn Binding="{Binding Price}" Header="Цена"/>
+                <DataGridTextColumn Binding="{Binding Dimensions}" Header="Размер"/>
+                <DataGridTextColumn Binding="{Binding Wheels}" Header="колёса"/>
+                <DataGridTextColumn Binding="{Binding Frame}" Header="Рама"/>
+                <DataGridTextColumn Binding="{Binding Gearbox}" Header="Коло-во передач"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
     </Grid>
 </Window>

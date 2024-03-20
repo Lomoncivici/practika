@@ -68,13 +68,13 @@
       <DependentUpon>1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Brands.cs">
-      <DependentUpon>PRACT3.tt</DependentUpon>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Characteristics.cs">
-      <DependentUpon>PRACT3.tt</DependentUpon>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Config.cs">
-      <DependentUpon>PRACT3.tt</DependentUpon>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="PRACT3.Context.cs">
       <AutoGen>True</AutoGen>
@@ -91,19 +91,40 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PRACT3.edmx</DependentUpon>
     </Compile>
+    <Compile Include="PRACT3DataSet.cs">
+      <DependentUpon>PRACT3DataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PRACT3DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PRACT3DataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="PRACT3Entities.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRACT3Entities.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRACT3Entities.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PRACT3Entities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PRACT3Entities.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Storage.cs">
-      <DependentUpon>PRACT3.tt</DependentUpon>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Storage_View.cs">
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
-      <DependentUpon>PRACT3.tt</DependentUpon>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Tip.cs">
-      <DependentUpon>PRACT3.tt</DependentUpon>
+      <DependentUpon>PRACT3Entities.tt</DependentUpon>
     </Compile>
     <Compile Include="Бред бредовый.xaml.cs">
       <DependentUpon>Бред бредовый.xaml</DependentUpon>
@@ -166,6 +187,13 @@
     <None Include="PRACT3DataSet.xss">
       <DependentUpon>PRACT3DataSet.xsd</DependentUpon>
     </None>
+    <EntityDeploy Include="PRACT3Entities.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>PRACT3Entities.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="PRACT3Entities.edmx.diagram">
+      <DependentUpon>PRACT3Entities.edmx</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -187,6 +215,16 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PRACT3.edmx</DependentUpon>
       <LastGenOutput>PRACT3.cs</LastGenOutput>
+    </Content>
+    <Content Include="PRACT3Entities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PRACT3Entities.edmx</DependentUpon>
+      <LastGenOutput>PRACT3Entities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="PRACT3Entities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PRACT3Entities.edmx</DependentUpon>
+      <LastGenOutput>PRACT3Entities.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
