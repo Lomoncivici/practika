@@ -24,3 +24,4 @@ C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Бред �
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\Бред бредовый.baml
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\1.g.cs
 C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\obj\Debug\1.baml
+C:\Users\SystemX\source\repos\Ycheb_practika\Ycheb_practika\bin\Debug\ru\EntityFramework.SqlServer.resources.dll

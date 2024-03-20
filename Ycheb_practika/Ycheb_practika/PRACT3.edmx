@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище PRACT3Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище PRACT3Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Brands">
           <Key>
             <PropertyRef Name="ID_Brand" />
@@ -37,7 +37,6 @@
           <Property Name="Tip_ID" Type="int" />
           <Property Name="brand_ID" Type="int" />
           <Property Name="price" Type="int" />
-          <Property Name="Arrival_Date" Type="date" />
           <Property Name="Config_ID" Type="int" />
           <Property Name="Characteristics_ID" Type="int" />
         </EntityType>
@@ -59,34 +58,26 @@
           <Property Name="Tip_Name" Type="varchar" MaxLength="32" />
         </EntityType>
         <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "PRACT3.dbo.Characteristics_View" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="Characteristics_View">
-          <Property Name="Размеры" Type="varchar" MaxLength="20" />
-          <Property Name="Количество колес" Type="int" />
-          <Property Name="Рама" Type="int" />
-          <Property Name="Коробка передач" Type="int" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "PRACT3.dbo.Product_Info_View" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
-        <EntityType Name="Product_Info_View">
-          <Property Name="Бренд" Type="varchar" MaxLength="32" />
-          <Property Name="Цена" Type="int" />
-          <Property Name="Дата прибытия" Type="date" />
-        </EntityType>-->
-        <!--Ошибки, обнаруженные при создании:
-предупреждение 6013: Первичный ключ в таблице или представлении "PRACT3.dbo.Storage_View" не определен, его не удалось вывести. Эта таблица или представление исключены. Чтобы использовать сущность, необходимо проверить схему, добавить правильные ключи и раскомментировать ее.
+предупреждение 6002: В таблице или представлении "PRACT3.dbo.Storage_View" не определен первичный ключ. Ключ был выведен, а определение таблицы или представления было создано в режиме только для чтения.-->
         <EntityType Name="Storage_View">
-          <Property Name="Бренд" Type="varchar" MaxLength="32" />
-          <Property Name="Тип" Type="varchar" MaxLength="32" />
-          <Property Name="Конфигурация" Type="varchar" MaxLength="20" />
-          <Property Name="Цена" Type="int" />
-          <Property Name="Дата прибытия" Type="date" />
-          <Property Name="Размеры" Type="varchar" MaxLength="20" />
-          <Property Name="Количество колес" Type="int" />
-          <Property Name="Рама" Type="int" />
-          <Property Name="Коробка передач" Type="int" />
-        </EntityType>-->
-        <Association Name="FK__Storage__brand_I__7C4F7684">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Price" Type="int" />
+          <Property Name="brand_ID" Type="int" />
+          <Property Name="Brand_Name" Type="varchar" MaxLength="32" />
+          <Property Name="Tip_ID" Type="int" />
+          <Property Name="Tip_Name" Type="varchar" MaxLength="32" />
+          <Property Name="Config_ID" Type="int" />
+          <Property Name="Config_Name" Type="varchar" MaxLength="20" />
+          <Property Name="Characteristics_ID" Type="int" />
+          <Property Name="Dimensions" Type="varchar" MaxLength="20" />
+          <Property Name="Wheels" Type="int" />
+          <Property Name="Frame" Type="int" />
+          <Property Name="Gearbox" Type="int" />
+        </EntityType>
+        <Association Name="FK__Storage__brand_I__2B0A656D">
           <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
           <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
           <ReferentialConstraint>
@@ -98,7 +89,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Storage__Charact__7A672E12">
+        <Association Name="FK__Storage__Charact__29221CFB">
           <End Role="Characteristics" Type="Self.Characteristics" Multiplicity="0..1" />
           <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
           <ReferentialConstraint>
@@ -110,7 +101,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Storage__Config___7D439ABD">
+        <Association Name="FK__Storage__Config___2BFE89A6">
           <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
           <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
           <ReferentialConstraint>
@@ -122,7 +113,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__Storage__Tip_ID__7B5B524B">
+        <Association Name="FK__Storage__Tip_ID__2A164134">
           <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
           <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
           <ReferentialConstraint>
@@ -141,25 +132,41 @@
           <EntitySet Name="Storage" EntityType="Self.Storage" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Tip" EntityType="Self.Tip" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK__Storage__brand_I__7C4F7684" Association="Self.FK__Storage__brand_I__7C4F7684">
+          <EntitySet Name="Storage_View" EntityType="Self.Storage_View" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Storage_View].[ID] AS [ID], 
+    [Storage_View].[Price] AS [Price], 
+    [Storage_View].[brand_ID] AS [brand_ID], 
+    [Storage_View].[Brand_Name] AS [Brand_Name], 
+    [Storage_View].[Tip_ID] AS [Tip_ID], 
+    [Storage_View].[Tip_Name] AS [Tip_Name], 
+    [Storage_View].[Config_ID] AS [Config_ID], 
+    [Storage_View].[Config_Name] AS [Config_Name], 
+    [Storage_View].[Characteristics_ID] AS [Characteristics_ID], 
+    [Storage_View].[Dimensions] AS [Dimensions], 
+    [Storage_View].[Wheels] AS [Wheels], 
+    [Storage_View].[Frame] AS [Frame], 
+    [Storage_View].[Gearbox] AS [Gearbox]
+    FROM [dbo].[Storage_View] AS [Storage_View]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__Storage__brand_I__2B0A656D" Association="Self.FK__Storage__brand_I__2B0A656D">
             <End Role="Brands" EntitySet="Brands" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
-          <AssociationSet Name="FK__Storage__Charact__7A672E12" Association="Self.FK__Storage__Charact__7A672E12">
+          <AssociationSet Name="FK__Storage__Charact__29221CFB" Association="Self.FK__Storage__Charact__29221CFB">
             <End Role="Characteristics" EntitySet="Characteristics" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
-          <AssociationSet Name="FK__Storage__Config___7D439ABD" Association="Self.FK__Storage__Config___7D439ABD">
+          <AssociationSet Name="FK__Storage__Config___2BFE89A6" Association="Self.FK__Storage__Config___2BFE89A6">
             <End Role="Config" EntitySet="Config" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
-          <AssociationSet Name="FK__Storage__Tip_ID__7B5B524B" Association="Self.FK__Storage__Tip_ID__7B5B524B">
+          <AssociationSet Name="FK__Storage__Tip_ID__2A164134" Association="Self.FK__Storage__Tip_ID__2A164134">
             <End Role="Tip" EntitySet="Tip" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PRACT3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -204,6 +211,7 @@
           <NavigationProperty Name="Characteristics" Relationship="Self.FK__Storage__Charact__7A672E12" FromRole="Storage" ToRole="Characteristics" />
           <NavigationProperty Name="Config" Relationship="Self.FK__Storage__Config___7D439ABD" FromRole="Storage" ToRole="Config" />
           <NavigationProperty Name="Tip" Relationship="Self.FK__Storage__Tip_ID__7B5B524B" FromRole="Storage" ToRole="Tip" />
+          <NavigationProperty Name="Storage_View" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -294,7 +302,27 @@
             <End Role="Tip" EntitySet="Tip" />
             <End Role="Storage" EntitySet="Storage" />
           </AssociationSet>
+          <EntitySet Name="Storage_View" EntityType="PRACT3Model.Storage_View" />
         </EntityContainer>
+        <EntityType Name="Storage_View">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Price" Type="Int32" />
+          <Property Name="brand_ID" Type="Int32" />
+          <Property Name="Brand_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Tip_ID" Type="Int32" />
+          <Property Name="Tip_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="Config_ID" Type="Int32" />
+          <Property Name="Config_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Characteristics_ID" Type="Int32" />
+          <Property Name="Dimensions" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Wheels" Type="Int32" />
+          <Property Name="Frame" Type="Int32" />
+          <Property Name="Gearbox" Type="Int32" />
+          <NavigationProperty Name="Storage" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -356,6 +384,25 @@
               <MappingFragment StoreEntitySet="Tip">
                 <ScalarProperty Name="ID_Tip" ColumnName="ID_Tip" />
                 <ScalarProperty Name="Tip_Name" ColumnName="Tip_Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Storage_View">
+            <EntityTypeMapping TypeName="PRACT3Model.Storage_View">
+              <MappingFragment StoreEntitySet="Storage_View">
+                <ScalarProperty Name="Gearbox" ColumnName="Gearbox" />
+                <ScalarProperty Name="Frame" ColumnName="Frame" />
+                <ScalarProperty Name="Wheels" ColumnName="Wheels" />
+                <ScalarProperty Name="Dimensions" ColumnName="Dimensions" />
+                <ScalarProperty Name="Characteristics_ID" ColumnName="Characteristics_ID" />
+                <ScalarProperty Name="Config_Name" ColumnName="Config_Name" />
+                <ScalarProperty Name="Config_ID" ColumnName="Config_ID" />
+                <ScalarProperty Name="Tip_Name" ColumnName="Tip_Name" />
+                <ScalarProperty Name="Tip_ID" ColumnName="Tip_ID" />
+                <ScalarProperty Name="Brand_Name" ColumnName="Brand_Name" />
+                <ScalarProperty Name="brand_ID" ColumnName="brand_ID" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

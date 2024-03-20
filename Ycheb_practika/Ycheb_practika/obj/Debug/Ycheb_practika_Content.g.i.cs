@@ -10,5 +10,7 @@
 
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pract3.context.tt")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pract3.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pract3entities.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("pract3entities.tt")]
 
 

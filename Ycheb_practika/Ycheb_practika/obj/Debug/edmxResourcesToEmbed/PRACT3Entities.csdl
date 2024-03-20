@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="PRACT3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+<Schema Namespace="PRACT3Model1" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityType Name="Brands">
     <Key>
       <PropertyRef Name="ID_Brand" />
     </Key>
     <Property Name="ID_Brand" Type="Int32" Nullable="false" />
     <Property Name="Brand_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__brand_I__7C4F7684" FromRole="Brands" ToRole="Storage" />
+    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__brand_I__2B0A656D" FromRole="Brands" ToRole="Storage" />
   </EntityType>
   <EntityType Name="Characteristics">
     <Key>
@@ -17,7 +17,7 @@
     <Property Name="Wheels" Type="Int32" />
     <Property Name="Frame" Type="Int32" />
     <Property Name="Gearbox" Type="Int32" />
-    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__Charact__7A672E12" FromRole="Characteristics" ToRole="Storage" />
+    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__Charact__29221CFB" FromRole="Characteristics" ToRole="Storage" />
   </EntityType>
   <EntityType Name="Config">
     <Key>
@@ -25,7 +25,7 @@
     </Key>
     <Property Name="ID_Config" Type="Int32" Nullable="false" />
     <Property Name="Config_Name" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__Config___7D439ABD" FromRole="Config" ToRole="Storage" />
+    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__Config___2BFE89A6" FromRole="Config" ToRole="Storage" />
   </EntityType>
   <EntityType Name="Storage">
     <Key>
@@ -37,11 +37,10 @@
     <Property Name="price" Type="Int32" />
     <Property Name="Config_ID" Type="Int32" />
     <Property Name="Characteristics_ID" Type="Int32" />
-    <NavigationProperty Name="Brands" Relationship="Self.FK__Storage__brand_I__7C4F7684" FromRole="Storage" ToRole="Brands" />
-    <NavigationProperty Name="Characteristics" Relationship="Self.FK__Storage__Charact__7A672E12" FromRole="Storage" ToRole="Characteristics" />
-    <NavigationProperty Name="Config" Relationship="Self.FK__Storage__Config___7D439ABD" FromRole="Storage" ToRole="Config" />
-    <NavigationProperty Name="Tip" Relationship="Self.FK__Storage__Tip_ID__7B5B524B" FromRole="Storage" ToRole="Tip" />
-    <NavigationProperty Name="Storage_View" />
+    <NavigationProperty Name="Brands" Relationship="Self.FK__Storage__brand_I__2B0A656D" FromRole="Storage" ToRole="Brands" />
+    <NavigationProperty Name="Characteristics" Relationship="Self.FK__Storage__Charact__29221CFB" FromRole="Storage" ToRole="Characteristics" />
+    <NavigationProperty Name="Config" Relationship="Self.FK__Storage__Config___2BFE89A6" FromRole="Storage" ToRole="Config" />
+    <NavigationProperty Name="Tip" Relationship="Self.FK__Storage__Tip_ID__2A164134" FromRole="Storage" ToRole="Tip" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -59,81 +58,8 @@
     </Key>
     <Property Name="ID_Tip" Type="Int32" Nullable="false" />
     <Property Name="Tip_Name" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__Tip_ID__7B5B524B" FromRole="Tip" ToRole="Storage" />
+    <NavigationProperty Name="Storage" Relationship="Self.FK__Storage__Tip_ID__2A164134" FromRole="Tip" ToRole="Storage" />
   </EntityType>
-  <Association Name="FK__Storage__brand_I__7C4F7684">
-    <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
-    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Brands">
-        <PropertyRef Name="ID_Brand" />
-      </Principal>
-      <Dependent Role="Storage">
-        <PropertyRef Name="brand_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Storage__Charact__7A672E12">
-    <End Role="Characteristics" Type="Self.Characteristics" Multiplicity="0..1" />
-    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Characteristics">
-        <PropertyRef Name="ID_Characteristics" />
-      </Principal>
-      <Dependent Role="Storage">
-        <PropertyRef Name="Characteristics_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Storage__Config___7D439ABD">
-    <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
-    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Config">
-        <PropertyRef Name="ID_Config" />
-      </Principal>
-      <Dependent Role="Storage">
-        <PropertyRef Name="Config_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Storage__Tip_ID__7B5B524B">
-    <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
-    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Tip">
-        <PropertyRef Name="ID_Tip" />
-      </Principal>
-      <Dependent Role="Storage">
-        <PropertyRef Name="Tip_ID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityContainer Name="PRACT3Entities1" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Brands" EntityType="Self.Brands" />
-    <EntitySet Name="Characteristics" EntityType="Self.Characteristics" />
-    <EntitySet Name="Config" EntityType="Self.Config" />
-    <EntitySet Name="Storage" EntityType="Self.Storage" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
-    <EntitySet Name="Tip" EntityType="Self.Tip" />
-    <AssociationSet Name="FK__Storage__brand_I__7C4F7684" Association="Self.FK__Storage__brand_I__7C4F7684">
-      <End Role="Brands" EntitySet="Brands" />
-      <End Role="Storage" EntitySet="Storage" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Storage__Charact__7A672E12" Association="Self.FK__Storage__Charact__7A672E12">
-      <End Role="Characteristics" EntitySet="Characteristics" />
-      <End Role="Storage" EntitySet="Storage" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Storage__Config___7D439ABD" Association="Self.FK__Storage__Config___7D439ABD">
-      <End Role="Config" EntitySet="Config" />
-      <End Role="Storage" EntitySet="Storage" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Storage__Tip_ID__7B5B524B" Association="Self.FK__Storage__Tip_ID__7B5B524B">
-      <End Role="Tip" EntitySet="Tip" />
-      <End Role="Storage" EntitySet="Storage" />
-    </AssociationSet>
-    <EntitySet Name="Storage_View" EntityType="PRACT3Model.Storage_View" />
-  </EntityContainer>
   <EntityType Name="Storage_View">
     <Key>
       <PropertyRef Name="ID" />
@@ -151,6 +77,78 @@
     <Property Name="Wheels" Type="Int32" />
     <Property Name="Frame" Type="Int32" />
     <Property Name="Gearbox" Type="Int32" />
-    <NavigationProperty Name="Storage" />
   </EntityType>
+  <Association Name="FK__Storage__brand_I__2B0A656D">
+    <End Role="Brands" Type="Self.Brands" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Brands">
+        <PropertyRef Name="ID_Brand" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="brand_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Storage__Charact__29221CFB">
+    <End Role="Characteristics" Type="Self.Characteristics" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Characteristics">
+        <PropertyRef Name="ID_Characteristics" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="Characteristics_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Storage__Config___2BFE89A6">
+    <End Role="Config" Type="Self.Config" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Config">
+        <PropertyRef Name="ID_Config" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="Config_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Storage__Tip_ID__2A164134">
+    <End Role="Tip" Type="Self.Tip" Multiplicity="0..1" />
+    <End Role="Storage" Type="Self.Storage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tip">
+        <PropertyRef Name="ID_Tip" />
+      </Principal>
+      <Dependent Role="Storage">
+        <PropertyRef Name="Tip_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PRACT3Entities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Brands" EntityType="Self.Brands" />
+    <EntitySet Name="Characteristics" EntityType="Self.Characteristics" />
+    <EntitySet Name="Config" EntityType="Self.Config" />
+    <EntitySet Name="Storage" EntityType="Self.Storage" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Tip" EntityType="Self.Tip" />
+    <EntitySet Name="Storage_View" EntityType="Self.Storage_View" />
+    <AssociationSet Name="FK__Storage__brand_I__2B0A656D" Association="Self.FK__Storage__brand_I__2B0A656D">
+      <End Role="Brands" EntitySet="Brands" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Storage__Charact__29221CFB" Association="Self.FK__Storage__Charact__29221CFB">
+      <End Role="Characteristics" EntitySet="Characteristics" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Storage__Config___2BFE89A6" Association="Self.FK__Storage__Config___2BFE89A6">
+      <End Role="Config" EntitySet="Config" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Storage__Tip_ID__2A164134" Association="Self.FK__Storage__Tip_ID__2A164134">
+      <End Role="Tip" EntitySet="Tip" />
+      <End Role="Storage" EntitySet="Storage" />
+    </AssociationSet>
+  </EntityContainer>
 </Schema>

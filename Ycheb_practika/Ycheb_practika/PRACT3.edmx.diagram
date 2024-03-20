@@ -15,6 +15,7 @@
         <AssociationConnector Association="PRACT3Model.FK__Storage__Charact__7A672E12" ManuallyRouted="false" />
         <AssociationConnector Association="PRACT3Model.FK__Storage__Config___7D439ABD" ManuallyRouted="false" />
         <AssociationConnector Association="PRACT3Model.FK__Storage__Tip_ID__7B5B524B" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="PRACT3Model.Storage_View" Width="1.5" PointX="4.75" PointY="4.625" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
