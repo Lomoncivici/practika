@@ -5,6 +5,7 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Xml.Linq;
+using System.Text.RegularExpressions;
 
 namespace Practoz5
 {
@@ -62,7 +63,7 @@ namespace Practoz5
                 Quantity.BorderBrush = new SolidColorBrush(Colors.Red);
                 Product.BorderBrush = new SolidColorBrush(Colors.Red);
             }
-            else if (int.TryParse(ID.Text, out int numbr))
+            else if (int.TryParse(ID.Text, out int numbr) && !Regex.IsMatch(Product.Text, @"\d"))
             {
                 object Prov = (ProviderCBX.SelectedItem as DataRowView).Row[0];
 
@@ -96,7 +97,7 @@ namespace Practoz5
                     Quantity.BorderBrush = new SolidColorBrush(Colors.Red);
                     Product.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
-                else
+                else if (!Regex.IsMatch(Product.Text, @"\d"))
                 {
                     object buy = (ProviderCBX.SelectedItem as DataRowView).Row[0];
 

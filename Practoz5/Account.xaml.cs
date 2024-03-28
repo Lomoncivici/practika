@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -80,23 +81,33 @@ namespace Practoz5
                 Loginn.BorderBrush = new SolidColorBrush(Colors.Red);
                 Password.BorderBrush = new SolidColorBrush(Colors.Red);
             }
-            else if (int.TryParse(ID.Text, out int numbr))
+            else if(!Regex.IsMatch(Position.Text, @"\d"))
             {
-                ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                if (int.TryParse(ID.Text, out int numbr))
+                {
+                    ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
 
-                Accountt.InsertQuery(Convert.ToInt32(ID.Text), Position.Text, Loginn.Text, CalculateSHA256(Password.Password));
-                AccountTable.ItemsSource = Accountt.GetMain();
-                AccountTable.Columns[1].Visibility = Visibility.Collapsed;
-                AccountTable.Columns[2].Visibility = Visibility.Collapsed;
-                AccountTable.Columns[3].Visibility = Visibility.Collapsed;
+                    Accountt.InsertQuery(Convert.ToInt32(ID.Text), Position.Text, Loginn.Text, CalculateSHA256(Password.Password));
+                    AccountTable.ItemsSource = Accountt.GetMain();
+                    AccountTable.Columns[1].Visibility = Visibility.Collapsed;
+                    AccountTable.Columns[2].Visibility = Visibility.Collapsed;
+                    AccountTable.Columns[3].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    ID.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                }
             }
             else
             {
-                ID.BorderBrush = new SolidColorBrush(Colors.Red);
-                Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                Position.BorderBrush = new SolidColorBrush(Colors.Red);
                 Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                 Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
             }
@@ -112,7 +123,7 @@ namespace Practoz5
                     Loginn.BorderBrush = new SolidColorBrush(Colors.Red);
                     Password.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
-                else
+                else if (!Regex.IsMatch(Position.Text, @"\d"))
                 {
                     Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                     Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
@@ -125,6 +136,12 @@ namespace Practoz5
                     AccountTable.Columns[1].Visibility = Visibility.Collapsed;
                     AccountTable.Columns[2].Visibility = Visibility.Collapsed;
                     AccountTable.Columns[3].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    Position.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                 }
             }
         }

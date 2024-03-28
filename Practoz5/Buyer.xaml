@@ -53,11 +53,11 @@ BorderThickness="2"
 materialDesign:HintAssist.Hint="Имя"
 Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.ColumnSpan="2" Grid.Column="4" Grid.Row="5" Background="{x:Null}" BorderBrush="#FFFF9A76" FontWeight="Bold" Foreground="#FF679B9B" SelectionBrush="#FF679B9B" CaretBrush="#FF679B9B" Height="50" VerticalAlignment="Center" HorizontalAlignment="Center" Width="186" />
         <TextBox x:Name="Phone"
-MaxLength="11"
+MaxLength="16"
 materialDesign:ButtonAssist.CornerRadius="12"
 BorderThickness="2"
 materialDesign:HintAssist.Hint="Номер телефона"
-Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.ColumnSpan="2" Grid.Column="6" Grid.Row="5" Background="{x:Null}" BorderBrush="#FFFF9A76" FontWeight="Bold" Foreground="#FF679B9B" SelectionBrush="#FF679B9B" CaretBrush="#FF679B9B" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Width="186" Margin="0,0,34,0" />
+Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.ColumnSpan="2" Grid.Column="6" Grid.Row="5" Background="{x:Null}" BorderBrush="#FFFF9A76" FontWeight="Bold" Foreground="#FF679B9B" SelectionBrush="#FF679B9B" CaretBrush="#FF679B9B" Height="50" VerticalAlignment="Center" HorizontalAlignment="Right" Width="186" Margin="0,0,34,0" TextChanged="PhoneTextBoxChanged" />
         <TextBox x:Name="Email"
     MaxLength="100"
     materialDesign:ButtonAssist.CornerRadius="12"

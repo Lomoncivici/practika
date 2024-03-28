@@ -4,6 +4,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Text.RegularExpressions;
 
 namespace Practoz5
 {
@@ -50,7 +51,7 @@ namespace Practoz5
                 Position.BorderBrush = new SolidColorBrush(Colors.Red);
                 CategorBox.BorderBrush = new SolidColorBrush(Colors.Red);
             }
-            else if (int.TryParse(ID.Text, out int numbr))
+            else if (int.TryParse(ID.Text, out int numbr) && !Regex.IsMatch(Position.Text, @"\d"))
             {
                 object Checr = (CategorBox.SelectedItem as DataRowView).Row[0];
 
@@ -66,8 +67,8 @@ namespace Practoz5
             }
             else
             {
-                ID.BorderBrush = new SolidColorBrush(Colors.Red);
-                Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                Position.BorderBrush = new SolidColorBrush(Colors.Red);
                 CategorBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
             }
         }
@@ -81,7 +82,7 @@ namespace Practoz5
                     Position.BorderBrush = new SolidColorBrush(Colors.Red);
                     CategorBox.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
-                else
+                else if (!Regex.IsMatch(Position.Text, @"\d"))
                 {
                     Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                     CategorBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
@@ -94,6 +95,12 @@ namespace Practoz5
                     CheckpleaseTable.Columns[1].Visibility = Visibility.Collapsed;
                     CheckpleaseTable.Columns[2].Visibility = Visibility.Collapsed;
                     CheckpleaseTable.Columns[3].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    Position.BorderBrush = new SolidColorBrush(Colors.Red);
+                    CategorBox.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                 }
             }
         }

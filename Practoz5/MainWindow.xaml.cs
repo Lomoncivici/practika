@@ -54,13 +54,10 @@ namespace Practoz5
             {
                 if (allLogins[i][2].ToString() == Login.Text && allLogins[i][3].ToString() == CalculateSHA256(Password.Password))
                 {
-                    int id = (int)allLogins[i][0];
+                    string id = (string)allLogins[i][1];
                     switch (id)
                     {
-                        case 1:
-
-                            break;
-                        case 2:
+                        case "Продавец":
                             Errror.Text = " ";
                             Login.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7C5A8"));
                             Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7C5A8"));
@@ -68,16 +65,13 @@ namespace Practoz5
                             Kasir kasir = new Kasir();
                             kasir.Show();
                             break;
-                        case 3:
+                        case "Администратор":
                             Errror.Text = " ";
                             Login.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7C5A8"));
                             Password.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FFF7C5A8"));
 
                             Admin admin = new Admin();
                             admin.Show();
-                            break;
-                        case 4:
-
                             break;
                     }
                     this.Close();

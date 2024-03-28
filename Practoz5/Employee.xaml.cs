@@ -1,6 +1,7 @@
 ﻿using Practoz5.conditerDataSetTableAdapters;
 using System;
 using System.Data;
+using System.Text.RegularExpressions;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -64,18 +65,28 @@ namespace Practoz5
             }
             else if (int.TryParse(ID.Text, out int numbr))
             {
-                object AcountID = (AccountID.SelectedItem as DataRowView).Row[0];
+                if (!Regex.IsMatch(LastName.Text, @"\d") || !Regex.IsMatch(FirstName.Text, @"\d"))
+                {
+                    object AcountID = (AccountID.SelectedItem as DataRowView).Row[0];
 
-                ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                LastName.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                FirstName.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                AccountID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    LastName.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    FirstName.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    AccountID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
 
-                Employ.InsertQuery(Convert.ToInt32(ID.Text), FirstName.Text, LastName.Text, Convert.ToInt32(AcountID));
-                EmployeeTable.ItemsSource = Employ.GetMain();
-                EmployeeTable.Columns[1].Visibility = Visibility.Collapsed;
-                EmployeeTable.Columns[2].Visibility = Visibility.Collapsed;
-                EmployeeTable.Columns[3].Visibility = Visibility.Collapsed;
+                    Employ.InsertQuery(Convert.ToInt32(ID.Text), FirstName.Text, LastName.Text, Convert.ToInt32(AcountID));
+                    EmployeeTable.ItemsSource = Employ.GetMain();
+                    EmployeeTable.Columns[1].Visibility = Visibility.Collapsed;
+                    EmployeeTable.Columns[2].Visibility = Visibility.Collapsed;
+                    EmployeeTable.Columns[3].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    LastName.BorderBrush = new SolidColorBrush(Colors.Red);
+                    FirstName.BorderBrush = new SolidColorBrush(Colors.Red);
+                    AccountID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                }
             }
             else
             {
@@ -96,10 +107,11 @@ namespace Practoz5
                     FirstName.BorderBrush = new SolidColorBrush(Colors.Red);
                     AccountID.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
-                else
+                else if (!Regex.IsMatch(LastName.Text, @"\d") || !Regex.IsMatch(FirstName.Text, @"\d"))
                 {
                     object AcountID = (AccountID.SelectedItem as DataRowView).Row[0];
 
+                    ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                     LastName.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                     FirstName.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                     AccountID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
@@ -111,6 +123,13 @@ namespace Practoz5
                     EmployeeTable.Columns[1].Visibility = Visibility.Collapsed;
                     EmployeeTable.Columns[2].Visibility = Visibility.Collapsed;
                     EmployeeTable.Columns[3].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                    LastName.BorderBrush = new SolidColorBrush(Colors.Red);
+                    FirstName.BorderBrush = new SolidColorBrush(Colors.Red);
+                    AccountID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                 }
             }
         }

@@ -42,11 +42,11 @@
             <materialDesign:PackIcon Kind="FileArrowLeftRightOutline" Foreground="#FFFFEADB" Height="32" Width="33" VerticalAlignment="Center" />
         </Button>
         <TextBox x:Name="Phone"
-MaxLength="11"
+MaxLength="16"
 materialDesign:ButtonAssist.CornerRadius="12"
 BorderThickness="2"
 materialDesign:HintAssist.Hint="Номер телефона"
-Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="7" Background="{x:Null}" BorderBrush="#FFFF9A76" FontWeight="Bold" Foreground="#FF679B9B" SelectionBrush="#FF679B9B" CaretBrush="#FF679B9B" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left" Width="186" Margin="10,0,0,0" />
+Style="{StaticResource MaterialDesignOutlinedTextBox}" Grid.ColumnSpan="2" Grid.Column="5" Grid.Row="7" Background="{x:Null}" BorderBrush="#FFFF9A76" FontWeight="Bold" Foreground="#FF679B9B" SelectionBrush="#FF679B9B" CaretBrush="#FF679B9B" Height="50" VerticalAlignment="Center" HorizontalAlignment="Left" Width="186" Margin="10,0,0,0" TextChanged="PhoneTextBoxChanged" />
         <TextBox x:Name="ProviderName"
   MaxLength="50"
   materialDesign:ButtonAssist.CornerRadius="12"

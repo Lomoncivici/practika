@@ -4,6 +4,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Text.RegularExpressions;
 
 namespace Practoz5
 {
@@ -52,7 +53,7 @@ namespace Practoz5
             }
         }
 
-        private void Add_Click(object sender, RoutedEventArgs e)
+        /*private void Add_Click(object sender, RoutedEventArgs e)
         {
 
             if (string.IsNullOrWhiteSpace(ID.Text) || string.IsNullOrWhiteSpace(Coment.Text) || string.IsNullOrWhiteSpace(Rating.Text) || BueyrCBX.SelectedItem == null)
@@ -113,6 +114,88 @@ namespace Practoz5
                     ReviewsTable.Columns[3].Visibility = Visibility.Collapsed;
                 }
             }
+        }*/
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(ID.Text) || string.IsNullOrWhiteSpace(Coment.Text) || string.IsNullOrWhiteSpace(Rating.Text) || BueyrCBX.SelectedItem == null)
+            {
+                SetRedBorderBrush();
+            }
+            else if (int.TryParse(ID.Text, out int numbr) && Regex.IsMatch(Rating.Text, @"\d"))
+            {
+                object Buy = (BueyrCBX.SelectedItem as DataRowView).Row[0];
+
+                SetDefaultBorderBrush();
+
+                Review.InsertQuery(Convert.ToInt32(ID.Text), Convert.ToInt32(Buy), Convert.ToInt32(Rating.Text), Coment.Text);
+                ReviewsTable.ItemsSource = Review.GetMain();
+                HideColumns();
+            }
+            else
+            {
+                ID.BorderBrush = new SolidColorBrush(Colors.Red);
+                SetDefaultBorderBrushForNonEmptyFields();
+            }
+        }
+
+        private void Change_Click(object sender, RoutedEventArgs e)
+        {
+            if (ReviewsTable.SelectedItem as DataRowView != null)
+            {
+                if (string.IsNullOrWhiteSpace(Rating.Text) || string.IsNullOrWhiteSpace(Coment.Text) || BueyrCBX.SelectedItem == null)
+                {
+                    BueyrCBX.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Rating.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Coment.BorderBrush = new SolidColorBrush(Colors.Red);
+                }
+                else if (Regex.IsMatch(Rating.Text, @"\d"))
+                {
+                    object buy = (BueyrCBX.SelectedItem as DataRowView).Row[0];
+
+                    SetDefaultBorderBrush();
+
+                    object id = (ReviewsTable.SelectedItem as DataRowView).Row[0];
+
+                    Review.UpdateQuery(Convert.ToInt32(buy), Convert.ToInt32(Rating.Text), Coment.Text, Convert.ToInt32(id));
+                    ReviewsTable.ItemsSource = Review.GetMain();
+                    HideColumns();
+                }
+                else
+                {
+                    SetRedBorderBrush();
+                }
+            }
+        }
+
+        private void SetRedBorderBrush()
+        {
+            ID.BorderBrush = new SolidColorBrush(Colors.Red);
+            BueyrCBX.BorderBrush = new SolidColorBrush(Colors.Red);
+            Rating.BorderBrush = new SolidColorBrush(Colors.Red);
+            Coment.BorderBrush = new SolidColorBrush(Colors.Red);
+        }
+
+        private void SetDefaultBorderBrush()
+        {
+            ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+            BueyrCBX.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+            Rating.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+            Coment.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+        }
+
+        private void SetDefaultBorderBrushForNonEmptyFields()
+        {
+            BueyrCBX.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+            Rating.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+            Coment.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+        }
+
+        private void HideColumns()
+        {
+            ReviewsTable.Columns[1].Visibility = Visibility.Collapsed;
+            ReviewsTable.Columns[2].Visibility = Visibility.Collapsed;
+            ReviewsTable.Columns[3].Visibility = Visibility.Collapsed;
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Text.RegularExpressions;
 
 namespace Practoz5
 {
@@ -59,7 +60,7 @@ namespace Practoz5
                 Loginn.BorderBrush = new SolidColorBrush(Colors.Red);
                 Fill.BorderBrush = new SolidColorBrush(Colors.Red);
             }
-            else if (int.TryParse(ID.Text, out int numbr))
+            else if (int.TryParse(ID.Text, out int numbr) && !Regex.IsMatch(Position.Text, @"\d") && !Regex.IsMatch(Loginn.Text, @"\d") && !Regex.IsMatch(Fill.Text, @"\d"))
             {
                 ID.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                 Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
@@ -75,9 +76,9 @@ namespace Practoz5
             else
             {
                 ID.BorderBrush = new SolidColorBrush(Colors.Red);
-                Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
-                Fill.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
+                Position.BorderBrush = new SolidColorBrush(Colors.Red);
+                Loginn.BorderBrush = new SolidColorBrush(Colors.Red);
+                Fill.BorderBrush = new SolidColorBrush(Colors.Red);
             }
         }
 
@@ -91,7 +92,7 @@ namespace Practoz5
                     Loginn.BorderBrush = new SolidColorBrush(Colors.Red);
                     Fill.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
-                else
+                else if (!Regex.IsMatch(Position.Text, @"\d") && !Regex.IsMatch(Loginn.Text, @"\d") && !Regex.IsMatch(Fill.Text, @"\d"))
                 {
                     Position.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
                     Loginn.BorderBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#ff9a76"));
@@ -104,6 +105,13 @@ namespace Practoz5
                     CategoriesTable.Columns[1].Visibility = Visibility.Collapsed;
                     CategoriesTable.Columns[2].Visibility = Visibility.Collapsed;
                     CategoriesTable.Columns[3].Visibility = Visibility.Collapsed;
+                }
+                else
+                {
+                    ID.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Position.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Loginn.BorderBrush = new SolidColorBrush(Colors.Red);
+                    Fill.BorderBrush = new SolidColorBrush(Colors.Red);
                 }
             }
         }

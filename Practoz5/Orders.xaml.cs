@@ -17,7 +17,7 @@ namespace Practoz5
         {
             InitializeComponent();
 
-            OrdersTable.ItemsSource = Orderss.GetaKasir();
+            OrdersTable.ItemsSource = Orderss.GetMain();
 
             EmployeeCBX.ItemsSource = Empl.GetData();
             EmployeeCBX.DisplayMemberPath = "EmployeeID";
@@ -28,9 +28,9 @@ namespace Practoz5
 
         private void WindDead(object sender, RoutedEventArgs e)
         {
-            OrdersTable.Columns[1].Visibility = Visibility.Collapsed;
+            /*OrdersTable.Columns[1].Visibility = Visibility.Collapsed;
             OrdersTable.Columns[2].Visibility = Visibility.Collapsed;
-            OrdersTable.Columns[3].Visibility = Visibility.Collapsed;
+            OrdersTable.Columns[3].Visibility = Visibility.Collapsed;*/
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)
